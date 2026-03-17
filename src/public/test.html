@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тестування | PsyStudent Monitor</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <h1 class="logo">PsyStudent Monitor</h1>
+      <nav>
+        <a href="/">Головна</a>
+        <a href="/admin.html">Адмін-панель</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <h2>Анонімне психологічне тестування</h2>
+    <p class="muted">Оберіть тест, дайте відповіді на запитання та отримайте результат з рекомендацією.</p>
+
+    <div id="testsList" class="cards-grid"></div>
+
+    <section id="testSection" class="card hidden">
+      <h3 id="testTitle"></h3>
+      <p id="testDescription" class="muted"></p>
+      <form id="testForm"></form>
+      <button id="submitTestBtn" class="btn">Завершити тест</button>
+    </section>
+
+    <section id="resultSection" class="card hidden success-box">
+      <h3>Тест успішно завершено</h3>
+      <p><strong>Сума балів:</strong> <span id="scoreValue"></span></p>
+      <p><strong>Рівень:</strong> <span id="levelValue"></span></p>
+      <p><strong>Рекомендація:</strong> <span id="recommendationValue"></span></p>
+    </section>
+  </main>
+
+  <script src="/js/test.js"></script>
+</body>
+</html>
