@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Адміністративна панель | PsyStudent Monitor</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <h1 class="logo">PsyStudent Monitor Admin</h1>
+      <nav>
+        <a href="/">Головна</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container section">
+    <section id="loginSection" class="card auth-card">
+      <h2>Вхід для адміністрації</h2>
+      <form id="loginForm" class="form-grid">
+        <input type="text" id="login" placeholder="Логін або Email" required />
+        <input type="password" id="password" placeholder="Пароль" required />
+        <button type="submit" class="btn">Увійти</button>
+      </form>
+      <p id="loginMessage" class="muted"></p>
+    </section>
+
+    <section id="dashboardSection" class="hidden">
+      <h2>Dashboard</h2>
+
+      <div class="cards-grid stats-grid" id="statsCards"></div>
+
+      <div class="card chart-wrap">
+        <h3>Динаміка проходжень (останні 14 днів)</h3>
+        <canvas id="dailyChart"></canvas>
+      </div>
+
+      <div class="card chart-wrap">
+        <h3>Розподіл за рівнями стану</h3>
+        <canvas id="levelChart"></canvas>
+      </div>
+
+      <section class="card">
+        <h3>Фільтр результатів</h3>
+        <div class="form-inline">
+          <input type="date" id="fromDate" />
+          <input type="date" id="toDate" />
+          <input type="number" id="filterTestId" placeholder="ID тесту" />
+          <input type="text" id="filterLevel" placeholder="Рівень стану" />
+          <button id="applyFilter" class="btn small">Застосувати</button>
+        </div>
+        <div id="resultsTableWrap"></div>
+      </section>
+
+      <section class="card">
+        <h3>Керування тестами</h3>
+        <form id="newTestForm" class="form-grid">
+          <input type="text" id="newTestTitle" placeholder="Назва тесту" required />
+          <textarea id="newTestDescription" placeholder="Опис тесту" required></textarea>
+          <button class="btn">Додати тест</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h3>Керування адміністраторами</h3>
+        <form id="newAdminForm" class="form-grid">
+          <input type="text" id="adminUsername" placeholder="Логін" required />
+          <input type="email" id="adminEmail" placeholder="Email" required />
+          <input type="password" id="adminPassword" placeholder="Пароль" required />
+          <button class="btn">Створити адміністратора</button>
+        </form>
+        <div id="adminsList"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>
